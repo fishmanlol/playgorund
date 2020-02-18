@@ -1,0 +1,22 @@
+#!/bin/sh
+
+git add .
+
+if [ $? -ne 0 ]
+then
+    echo 'failed'
+    exit 1
+fi
+
+getopts "m:" args
+
+case $args in
+    m)
+        echo "m's arg:$OPTARG"
+        ;;
+    *)
+        echo "unkown arg"
+        exit 1
+esac
+
+        
